@@ -40,17 +40,19 @@ Blog = require('../models/blogModel');
 
 
 
-router.get("/", async (req, res) => {
-  try {
-    const foundBlogs = await Blog.find({});
-    console.log("=============== ALL BLOGS =============");
-    console.log(foundBlogs);
-    res.render("home", { foundBlogs: foundBlogs });
-  } catch (err) {
-    console.log("===============ERROR ERROR ERROR =============");
-    console.log(err);
-  }
+router.get("/", (req, res)=>{
+  Blog.find({}, (err,foundBlogs)=>{
+    if(err){
+      console.log("========= ERROR =========");
+      console.log(err);
+    } else{
+      console.log("========= ALL BLOGS ============");
+      console.log(foundBlogs);
+      res.render("home", {foundBlogs:foundBlogs});
+    }
+  });
 });
+
 
 router.get("/about", (req, res) => {
   res.render('about');
