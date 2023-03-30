@@ -1,4 +1,14 @@
 {
+  "name": "blogdeneme2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
@@ -7,5 +17,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
